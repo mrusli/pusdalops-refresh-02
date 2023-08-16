@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+
+.laporanScreenTitle > .z-row > .z-row-inner > .z-row-content {
+	padding: 0px 0px;
+}
+
+.laporanScreenGridColumn > .z-column {
+	background: none;
+} 
+
+.laporanScreenGridColumn > .z-column > .z-column-content {
+	padding: 0px 0px;
+	color: black;
+}
+
+.laporanScreenGridColumn > .z-column > .z-column-content > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.kejadian-content > .z-row-inner > .z-row-content {
+	padding: 0px 0px;
+}
+
+.laporanScreenGridColumn > .uraiColumnHeader {
+	text-align: center;
+}
+
+.laporanScreenGridColumn > .jenKejColumnHeader {
+	text-align: center;
+}
+
+.kotamaopsCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+	font-weight: bold;
+}
+
+.noUrtCell {
+	vertical-align: top;
+}
+
+.noUrtCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.noCell {
+	vertical-align: top;
+}
+
+.noCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.twCell {
+	vertical-align: top;
+}
+
+.twCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.uraiCell {
+	vertical-align: top;
+	text-align: justify;	
+}
+
+.uraiCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.jenKejCell {
+	vertical-align: top;
+	text-align: left;
+}
+
+.jenKejCell > .z-label {
+	font-size: 12px;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}

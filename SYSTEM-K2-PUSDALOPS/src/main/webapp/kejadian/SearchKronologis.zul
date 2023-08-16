@@ -1,0 +1,30 @@
+<?page title="Pencarian Kronologis" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="searchKronologisDialogWin" border="normal"
+	width="920px" height="630px" apply="${searchKronologisDialogControl}">
+	<grid>
+		<rows>
+			<row>
+				<cell width="15%">
+					<label value="Kata Kunci:"></label>
+				</cell>
+				<cell>
+					<hlayout valign="middle" visible="true">
+						<textbox id="searchWordTextbox" width="580px" sclass="dlg01-textbox"></textbox>
+						<button id="searchTextButton" sclass="mod01Button" iconSclass="z-icon-search-plus"></button>
+					</hlayout>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	<listbox mold="paging" autopaging="true" height="510px">
+		<listhead>
+			<listheader label="ID" width="175px"></listheader>
+			<listheader label="Kronologis"></listheader>
+		</listhead>
+	</listbox>
+	<hlayout style="padding-top: 5px;">
+		<button id="cancelButton" label="Tutup" sclass="comButton"></button>	
+	</hlayout>		
+</window>
+</zk>

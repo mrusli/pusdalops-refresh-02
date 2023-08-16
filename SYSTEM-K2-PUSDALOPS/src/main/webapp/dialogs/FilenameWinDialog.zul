@@ -1,0 +1,38 @@
+<?page title="FilenameWinDialog" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window width="500px" height="260px" title="Export Laporan"
+	id="filenameDialogWin" apply="${filenameDialogWinControl}">
+	<grid>
+		<rows>
+			<row>
+				<cell width="30%">
+					<label value="Directory:"></label>						
+				</cell>
+				<cell>
+					<textbox id="directoryTextbox" width="280px"></textbox>	
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Nama Laporan:"></label>	
+				</cell>
+				<cell>
+					<textbox id="filenameTextbox" width="280px"></textbox>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Extension:"></label>
+				</cell>
+				<cell>
+					<combobox id="fileExtensionCombobox" width="120px"></combobox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	<hlayout style="padding-top: 5px;">
+		<button id="lanjutButton" label="Lanjut" sclass="comButton"></button>
+		<button id="cancelButton" label="Batal" sclass="comButton"></button>	
+	</hlayout>	
+</window>
+</zk>

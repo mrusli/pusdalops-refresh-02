@@ -1,0 +1,11 @@
+<?page title="HomeInfo" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="homeInfoWin" border="none" sclass="homeWindow" apply="${homeInfoControl}">
+	<separator height="40px"></separator>
+	<vlayout sclass="vTitleLayout" spacing="25px">
+		<image id="mainImage"></image>
+		<label id="mainTitle01Label" sclass="home-h1"></label>
+		<label id="mainTitle02Label" sclass="home-h1"></label>
+	</vlayout>
+</window>
+</zk>

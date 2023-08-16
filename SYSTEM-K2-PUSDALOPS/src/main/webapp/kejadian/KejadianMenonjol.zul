@@ -1,0 +1,502 @@
+<?page title="Kejadian Menonjol" contentType="text/html;charset=UTF-8"?>
+<zk>
+<borderlayout id="kejadianMenonjolWin" apply="${kejadianMenonjolWinControl}" width="100%" height="100%">
+	<north border="none" sclass="northArea">
+		<vlayout>			
+			<hlayout valign="middle" style="padding: 5px 0px">
+				<label id="formTitleLabel" sclass="headTitle"></label>
+				<label id="newKejadianLabel" value="Input Kejadian" sclass="headTitle labelClick"></label>
+				<label id="splitLabel" value=" - / -" sclass="headTitle" visible="false"></label>
+				<label id="editKejadianLabel" value="Edit" sclass="headTitle labelClick" visible="false"></label>
+				<label id="saveKejadianLabel" value="Simpan" sclass="headTitle labelClick" visible="false"></label>
+				<label id="cancelKejadianLabel" value="Batal" sclass="headTitle labelClick" visible="false"></label>
+			</hlayout>
+		</vlayout>
+	</north>
+	<west border="none">	
+		<vbox hflex="1">
+			<groupbox width="900px" closable="false">
+				<caption label="Waktu / Tempat"></caption>
+				<grid id="waktuTemplatGrid" width="860px">
+					<rows>
+						<row>
+							<cell width="15%">
+								<label value="ID:" style="font-size:14px;"></label>
+							</cell>
+							<cell width="30%">
+								<textbox id="kejadianIdTextbox" width="240px" readonly="true" sclass="dlg-textbox"></textbox>
+							</cell>
+							<cell width="17%">
+								<label id="idLabel" style="font-size:9px"></label>
+							</cell>
+							<cell>
+								
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="TW.Pembuatan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="twBuatTahunTextbox" width="60px" sclass="dlg-textbox"></textbox>
+								<textbox id="twBuatTanggalJamTextbox" width="100px" sclass="dlg-textbox"></textbox>
+								<combobox id="twBuatTimeZoneCombobox" width="80px" sclass="dlg-combobox"></combobox>						
+							</cell>
+							<cell>
+								<label value="TW.Kejadian:" style="font-size:14px;"></label>	
+							</cell>
+							<cell>
+								<textbox id="twJadiTahunTextbox" width="60px" disabled="true" sclass="dlg-textbox"></textbox>
+								<textbox id="twJadiTanggalJamTextbox" width="100px" disabled="true" sclass="dlg-textbox"></textbox>
+								<textbox id="twJadiTimeZoneTextbox" width="42px" disabled="true" sclass="dlg-textbox"></textbox>
+								<button id="twJadiRubahButton" label="..." sclass="modButton"></button>
+							</cell>
+						</row>
+						<row>
+							<cell >
+								<label value="Kotamaops:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kotamaopsCombobox" width="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+							<cell>
+								<label value="Propinsi:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="propCombobox" width="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Koord GPS:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<textbox id="koordGpsTextbox" width="240px" sclass="dlg-textbox"></textbox>
+							</cell>
+							<cell>
+								<label value="Koord Peta:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="koordPetaTextbox" width="240px" sclass="dlg-textbox"></textbox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Bujur / Lintang:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="bujurLintangTextbox" width="240px" sclass="dlg-textbox"></textbox>
+							</cell>
+							<cell>
+		
+							</cell>
+							<cell>
+		
+							</cell>
+						</row>
+						
+						<row>
+							<cell>
+								<label value="Kab / Kotamadya:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<combobox id="kabupatenCombobox" width ="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+							<cell>
+								<label value="Kecamatan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kecamatanCombobox" width="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Kelurahan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kelurahanCombobox" width="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+							<cell>
+							
+							</cell>
+							<cell>
+							
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Kampung:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<textbox id="kampungTextbox" width="240px" sclass="dlg-textbox"></textbox>
+							</cell>
+							<cell>
+								<label value="Jalan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="jalanTextbox" width="240px" sclass="dlg-textbox"></textbox>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox width="900px" closable="false">
+				<caption label="Kejadian"></caption>
+				<grid width="860px">
+					<rows>
+						<row>
+							<cell width="15%">
+								<label value="Jenis Kejadian:" style="font-size:14px;"></label>
+							</cell>
+							<cell width="30%">
+								<combobox id="jenisKejadianCombobox" width="240px" sclass="dlg-combobox"></combobox>						
+							</cell>
+							<cell width="17%">
+								<label value="Motif:" style="font-size:14px;"></label>	
+							</cell>
+							<cell width="30%">
+								<combobox id="motifKejadianCombobox" width="240px" sclass="dlg-combobox"></combobox>	
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Pelaku Kejadian:" style="font-size:14px;"></label>						
+							</cell>
+							<cell>
+								<combobox id="pelakuKejadianCombobox" width="240px" sclass="dlg-combobox"></combobox>
+							</cell>
+							<cell>
+								<label value="Keterangan Pelaku:" style="font-size:14px;"></label>						
+							</cell>
+							<cell>
+								<textbox id="keteranganPelakuTextbox" width="240px" sclass="dlg-textbox"></textbox>						
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Sasaran:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="sasaranTextbox" width="240px" sclass="dlg-textbox"></textbox>
+							</cell>
+							<cell>
+							
+							</cell>
+							<cell>
+							
+							</cell>
+						</row>
+					</rows>		
+				</grid>
+			</groupbox>
+			<groupbox width="900px" height="296px" closable="false">
+				<caption label="Kronologis"></caption>
+				<textbox id="kronologisTextbox" rows="14" width="855px"></textbox>
+			</groupbox>			
+		</vbox>
+	</west>
+	<center border="none">
+		<vbox hflex="1">
+			<groupbox id="kerugian0Groupbox" width="450px" closable="false">
+				<caption>
+					<checkbox id="kerugian0Checkbox" sclass="dlg-checkbox"></checkbox>
+					<label id="kerugian0CaptionLabel" value="Kerugian - Pihak Kita"></label>
+					<button id="kerugian0AddButton" sclass="mod03Button" iconSclass="z-icon-plus" visible="false"></button>					
+					<button id="kerugian0DeleteButton" sclass="mod03Button" iconSclass="z-icon-minus" visible="false"></button>					
+					<button id="kerugian0EditButton" sclass="mod03Button" iconSclass="z-icon-edit" visible="false"></button>					
+					<button id="kerugian0SaveButton" sclass="mod03Button" iconSclass="z-icon-floppy-o" visible="false"></button>					
+					<button id="kerugian0PrevButton" sclass="mod04Button" iconSclass="z-icon-chevron-left" visible="false"></button>					
+					<button id="kerugian0NextButton" sclass="mod04Button" iconSclass="z-icon-chevron-right" visible="false"></button>					
+				</caption>
+				<grid>
+					<rows>
+						<row>
+							<cell width="15%">
+								<label value="Nama Pers/Mat:" style="font-size:14px;"></label>	
+							</cell>
+							<cell width="30%">
+								<textbox id="namaPersMat0Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Tipe Kerugian:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<hlayout style="padding-bottom: 2px;" valign="middle">
+									<combobox id="tipeKerugian0Combobox" width="120px" sclass="dlg-combobox" disabled="true"></combobox>					
+									<label value="ID:" style="font-size:14px;"></label>
+									<combobox id="lembaga0Combobox" width="90px" sclass="dlg-combobox" disabled="true"></combobox>								
+								</hlayout>
+							</cell>				
+						</row>
+						<row>
+							<cell>
+								<label value="Jenis:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kerugianJenis0Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Kondisi:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kondisi0Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Jumlah:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<hlayout>
+									<intbox id="jumlah0Intbox" width="70px" disabled="true"></intbox>
+									<label value="Satuan:" style="font-size:14px;"></label>
+									<combobox id="satuan0Combobox" width="110px" sclass="dlg-combobox" disabled="true"></combobox>						
+								</hlayout>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Keterangan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="keterangan0Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>							
+					</rows>					
+				</grid>
+			</groupbox>
+			<groupbox width="450px" closable="false">				
+				<caption>
+					<checkbox id="kerugian1Checkbox" sclass="dlg-checkbox"></checkbox>
+					<label id="kerugian1CaptionLabel" value="Kerugian - Pihak Musuh"></label>
+					<button id="kerugian1AddButton" sclass="mod03Button" iconSclass="z-icon-plus" visible="false"></button>					
+					<button id="kerugian1DeleteButton" sclass="mod03Button" iconSclass="z-icon-minus" visible="false"></button>					
+					<button id="kerugian1EditButton" sclass="mod03Button" iconSclass="z-icon-edit" visible="false"></button>					
+					<button id="kerugian1SaveButton" sclass="mod03Button" iconSclass="z-icon-floppy-o" visible="false"></button>					
+					<button id="kerugian1PrevButton" sclass="mod04Button" iconSclass="z-icon-chevron-left" visible="false"></button>					
+					<button id="kerugian1NextButton" sclass="mod04Button" iconSclass="z-icon-chevron-right" visible="false"></button>					
+				</caption>
+				<grid>
+					<rows>
+						<row>
+							<cell width="15%">
+								<label value="Nama Pers/Mat:" style="font-size:14px;"></label>	
+							</cell>
+							<cell width="30%">
+								<textbox id="namaPersMat1Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Tipe Kerugian:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<hlayout style="padding-bottom: 2px;" valign="middle">
+									<combobox id="tipeKerugian1Combobox" width="120px" sclass="dlg-combobox" disabled="true"></combobox>					
+									<label value="ID:" style="font-size:14px;"></label>
+									<combobox id="lembaga1Combobox" width="90px" sclass="dlg-combobox" disabled="true"></combobox>									
+								</hlayout>
+							</cell>				
+						</row>
+						<row>
+							<cell>
+								<label value="Jenis:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kerugianJenis1Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Kondisi:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kondisi1Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Jumlah:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<hlayout>
+									<intbox id="jumlah1Intbox" width="70px" disabled="true"></intbox>
+									<label value="Satuan:" style="font-size:14px;"></label>
+									<combobox id="satuan1Combobox" width="110px" sclass="dlg-combobox" disabled="true"></combobox>						
+								</hlayout>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Keterangan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="keterangan1Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>							
+					</rows>					
+				</grid>
+			</groupbox>
+			<groupbox width="450px" closable="false">
+				<caption>
+					<checkbox id="kerugian2Checkbox" sclass="dlg-checkbox" disabled="true"></checkbox>
+					<label id="kerugian2CaptionLabel" value="Kerugian - Pihak Lain"></label>
+					<button id="kerugian2AddButton" sclass="mod03Button" iconSclass="z-icon-plus" visible="false"></button>					
+					<button id="kerugian2DeleteButton" sclass="mod03Button" iconSclass="z-icon-minus" visible="false"></button>					
+					<button id="kerugian2EditButton" sclass="mod03Button" iconSclass="z-icon-edit" visible="false"></button>					
+					<button id="kerugian2SaveButton" sclass="mod03Button" iconSclass="z-icon-floppy-o" visible="false"></button>					
+					<button id="kerugian2PrevButton" sclass="mod04Button" iconSclass="z-icon-chevron-left" visible="false"></button>					
+					<button id="kerugian2NextButton" sclass="mod04Button" iconSclass="z-icon-chevron-right" visible="false"></button>					
+				</caption>
+				<grid>
+					<rows>
+						<row>
+							<cell width="15%">
+								<label value="Nama Pers/Mat:" style="font-size:14px;"></label>	
+							</cell>
+							<cell width="30%">
+								<textbox id="namaPersMat2Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Tipe Kerugian:" style="font-size:14px;"></label>					
+							</cell>
+							<cell>
+								<hlayout style="padding-bottom: 2px;" valign="middle">
+									<combobox id="tipeKerugian2Combobox" width="120px" sclass="dlg-combobox" disabled="true"></combobox>					
+									<label value="ID:" style="font-size:14px;"></label>
+									<combobox id="lembaga2Combobox" width="90px" sclass="dlg-combobox" disabled="true"></combobox>
+								</hlayout>
+							</cell>				
+						</row>
+						<row>
+							<cell>
+								<label value="Jenis:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kerugianJenis2Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Kondisi:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<combobox id="kondisi2Combobox" width="239px" sclass="dlg-combobox" disabled="true"></combobox>					
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Jumlah:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<hlayout>
+									<intbox id="jumlah2Intbox" width="70px" disabled="true"></intbox>
+									<label value="Satuan:" style="font-size:14px;"></label>
+									<combobox id="satuan2Combobox" width="110px" sclass="dlg-combobox" disabled="true"></combobox>						
+								</hlayout>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Keterangan:" style="font-size:14px;"></label>
+							</cell>
+							<cell>
+								<textbox id="keterangan2Textbox" width="240px" sclass="dlg-textbox" disabled="true"></textbox>
+							</cell>
+						</row>							
+					</rows>					
+				</grid>
+			</groupbox>				
+		</vbox>
+	</center>
+	<east border="none">
+	
+		<vbox hflex="1" vflex="1">
+			<groupbox width="550px" closable="false">
+				<caption label="Kronologis Kejadian"></caption>
+				<hlayout>
+					<grid width="380px">
+						<rows>
+							<row valign="middle">
+								<cell width="25%">
+									<label value="TW:" style="font-size:14px;"></label> 
+								</cell>
+								<cell>
+									<radiogroup id="twRadioGroup">
+										<radio id="twPembuatanRadio" label="TW Pembuatan" sclass="dlg-radio" selected="true"/>
+										<radio id="twKejadianRadio" label="TW Kejadian" sclass="dlg-radio"/>
+									</radiogroup>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="TW Awal:" style="font-size:14px;"></label> 
+								</cell>
+								<cell>
+									<hlayout style="padding: 0px;" valign="middle" visible="true">										
+										<textbox id="twAwalTahunTextbox" width="60px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<textbox id="twAwalTanggalJamTextbox" width="100px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<textbox id="twAwalTimeZoneTextbox" width="52px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<button id="twAwalRubahButton" label="..." sclass="mod01Button"></button>								
+									</hlayout>	
+								</cell>
+							</row>							
+							<row>
+								<cell>
+									<label value="TW Akhir:" style="font-size:14px;"></label>
+								</cell>
+								<cell>
+									<hlayout valign="middle" visible="true">
+										<textbox id="twAkhirTahunTextbox" width="60px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<textbox id="twAkhirTanggalJamTextbox" width="100px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<textbox id="twAkhirTimeZoneTextbox" width="52px" disabled="true" sclass="dlg01-textbox"></textbox>
+										<button id="twSearchButton" sclass="mod01Button" iconSclass="z-icon-search-plus"></button>
+									</hlayout>	
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="ID:" style="font-size:14px;"></label>
+								</cell>
+								<cell>
+									<hlayout valign="middle" visible="true">
+										<textbox id="searchIdTextbox" width="223px" sclass="dlg01-textbox"></textbox>
+										<button id="searchIdButton" sclass="mod01Button" iconSclass="z-icon-search-plus"></button>
+									</hlayout>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Kata:" style="font-size:14px;"></label>
+								</cell>
+								<cell>
+									<hlayout valign="middle" visible="true">
+										<textbox id="searchWordTextbox" width="223px" sclass="dlg01-textbox"></textbox>
+										<button id="searchTextButton" sclass="mod01Button" iconSclass="z-icon-search-plus"></button>
+									</hlayout>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+					
+				</hlayout>
+				<hlayout style="padding-top:5px;">
+					<listbox id="searchResultListbox" mold="paging" autopaging="true" height="534px">
+						<listhead>
+							<listheader label="ID" width="170px"></listheader>
+							<listheader label="TW Pembuatan" width="170px"></listheader>
+							<listheader label="TW Kejadian" width="170px"></listheader>
+						</listhead>
+					</listbox>
+				</hlayout>
+			</groupbox>
+		</vbox>	
+	</east>
+</borderlayout>
+</zk>

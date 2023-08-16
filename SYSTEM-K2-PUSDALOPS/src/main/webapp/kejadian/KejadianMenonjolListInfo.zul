@@ -1,0 +1,44 @@
+<?page title="Kejadian Menonjol" contentType="text/html;charset=UTF-8"?>
+<zk>
+<borderlayout id="kejadianMenonjolListInfoWin" apply="${kejadianMenonjolListInfoControl}" width="100%" height="100%">
+	<north border="none" sclass="northArea">
+		<vlayout>			
+			<hlayout valign="middle" style="padding: 5px 0px">
+				<label id="formTitleLabel" sclass="headTitle"></label>
+			</hlayout>
+		</vlayout>
+	</north>
+	<center border="none" sclass="centerArea">
+		<div vflex="1">
+			<hlayout style="padding: 10px;" valign="middle" height="50px">
+				<combobox id="matraCombobox" width="180px" sclass="dlg-combobox"></combobox>
+				<label value="Tahun:" sclass="infoResultLabel"></label>
+				<combobox id="yearCombobox" width="160px" sclass="dlg-combobox"></combobox>
+				<label id="infoResultlabel" value="Total: 0 kejadian" sclass="infoResultLabel"></label>
+				<button id="newButton" label="Tambah" sclass="modButton"></button>
+				<label value="ID:" sclass="infoResultLabel"></label>
+				<textbox id="searchIdTextbox" width="223px" sclass="dlg01-textbox"></textbox>
+				<button id="searchIdButton" sclass="mod01Button" iconSclass="z-icon-search-plus"></button>
+				<label value="Sort:" sclass="infoResultLabel"></label>
+				<combobox id="sortCombobox" width="160px" sclass="dlg-combobox"></combobox>
+				
+			</hlayout>	
+			<listbox id="kejadianListbox" mold="paging" autopaging="true" vflex="1">
+				<listhead>
+					<listheader label="ID" width="175px"/>
+					<listheader label="TW Kejadian" width="205px"/>
+					<listheader label="TW Pembuatan" width="205px"/>					
+					<listheader label="Kotamops" width="220px"/>
+					<listheader label="Propinsi" width="220px"/>
+					<listheader label="Jenis" width="200px"/>
+					<listheader label="Motif" width="120px"/>
+					<listheader width="35px"/>
+					<listheader width="35px"/>
+					<listheader label="Kerugian" width="280px"/>
+					<listheader label="Sinkronisasi"></listheader>
+				</listhead>
+			</listbox>	
+		</div>
+	</center>
+</borderlayout>
+</zk>

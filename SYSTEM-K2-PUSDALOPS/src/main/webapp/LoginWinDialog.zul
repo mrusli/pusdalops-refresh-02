@@ -1,0 +1,49 @@
+<?page title="LoginWinDialog" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="none" width="950px" height="325px" position="center" closable="true" id="loginDialogWin" apply="${mainLoginDialogControl}">
+	<html style="color:red; font-family: Arial, Helvetica, sans-serif; font-size: 1.5em;" if="${not empty param.login_error}">
+		<![CDATA[ 
+			Login Gagal. Mohon dicoba kembali : ${SPRING_SECURITY_LAST_EXCEPTION.message} 
+		]]>
+    </html>
+	<html:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:html="native">
+		<grid>
+			<rows>
+				<row>
+					<cell width="50%" align="right">
+						<label value="KOTAMAOPS / ANGKATAN:" style="font-size: 1.75em; font-weight: bold; color: #d9251c;"></label>							
+					</cell>
+					<cell>
+						<textbox id="username" name="username" style="font-size: 1.5em;"/>
+					</cell>
+				</row>
+				<row>
+					<cell align="right">
+						<label value="PASSWORD:" style="font-size: 1.75em; font-weight: bold; color: #d9251c;"></label>							
+					</cell>
+					<cell>
+						<textbox id="password" name="password" type="password" style="font-size: 1.5em;"/>							
+					</cell>
+				</row>
+				<!--
+ 				!!! NOT FOR PRODUCTION !!!
+ 						
+				<row>
+					<cell align="right">
+						<label value="Remember Me:" style="font-size: 1em;" sclass="c-label"></label>
+					</cell>
+					<cell>
+						<checkbox id="rememberme" name="remember-me"></checkbox>
+					</cell>
+				</row> 
+				-->
+			</rows>
+		</grid>
+		<separator height="20px"/>
+		<div align="center">
+			<html:input type="submit" value="Login" sclass="btn btn-primary"/>
+			<html:input type="reset" value="Reset" sclass="btn btn-primary" />			
+		</div>		
+	</html:form>
+</window>
+</zk>
